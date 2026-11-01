@@ -1,33 +1,15 @@
-"""
-Юніт-тести для Лабораторної роботи № 6.
-
-Студенти повинні доповнити цей файл тестами для своїх рішень.
-"""
 import unittest
 
-# TODO: Імпортуйте функції для тестування з вашого пакета
-# from src.назва_вашого_пакета.назва_модуля import ваша_функція
+from src.simple_timer.display import display_countdown
+from src.simple_timer.timer import start_timer
 
 class TestLab6(unittest.TestCase):
 
-    def test_example(self):
-        """Приклад тестового випадку."""
-        self.assertEqual(2 + 2, 4)
+    def test_display(self):
+        self.assertEqual(display_countdown(1), 1)
 
-    # TODO: Додайте тестові випадки для функцій у вашому пакеті.
-    # def test_your_function(self):
-    #     """Тестовий випадок для вашої_функції."""
-    #     # Приклад перевірки
-    #     self.assertEqual(ваша_функція(вхідні_дані), очікуваний_результат)
-
-    # def test_another_function_with_edge_cases(self):
-    #     """Тестовий випадок для іншої_функції з граничними випадками."""
-    #     # Тест з нулем
-    #     self.assertEqual(інша_функція(0), очікуваний_для_нуля)
-    #     # Тест з від'ємним числом
-    #     self.assertEqual(інша_функція(-5), очікуваний_для_від'ємного)
-    #     # Тест з великим числом
-    #     self.assertEqual(інша_функція(1000), очікуваний_для_великого)
+    def test_start_time(self):
+        self.assertEqual(start_timer(1), True)
 
 
 if __name__ == '__main__':
